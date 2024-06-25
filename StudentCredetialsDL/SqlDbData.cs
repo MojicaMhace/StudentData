@@ -56,6 +56,7 @@ namespace GradeManagementDL
             info.Parameters.AddWithValue("@StudentName", credential.StudentName);
             info.Parameters.AddWithValue("@CourseSection", credential.CourseSection);
             info.Parameters.AddWithValue("@AverageGrade", credential.Average);
+            sqlConnection.Open();
             info.ExecuteNonQuery();
             sqlConnection.Close();
         }

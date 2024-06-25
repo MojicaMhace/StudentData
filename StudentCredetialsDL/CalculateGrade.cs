@@ -1,5 +1,7 @@
 ﻿using System;
 
+
+
 namespace GradeManagementDL
 {
     public class CalculateGrade

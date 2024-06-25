@@ -4,6 +4,8 @@ using GradeManagementDL;
 using GradeManagemenrBL;
 using ModelList;
 
+
+
 namespace GradesSystemUI
 {
     public class Program
@@ -17,7 +19,7 @@ namespace GradesSystemUI
             {
                 Console.WriteLine("-----------------------------------------------------------------------------------------");
                 Console.WriteLine("Welcome to the Grade Management System");
-                Console.WriteLine("---------------------------------------------------s--------------------------------------");
+                Console.WriteLine("-----------------------------------------------------------------------------------------");
                 Console.WriteLine($"Student Name: {student.StudentName}");
                 Console.WriteLine($"Course and Section: {student.CourseSection}");
                 Console.WriteLine("Enter Subject Grades");
@@ -61,7 +63,8 @@ namespace GradesSystemUI
                 Credential newCredential = new Credential
                 {
                     StudentName = student.StudentName,
-                    CourseSection = student.CourseSection
+                    CourseSection = student.CourseSection,
+                    Average = averageGrade 
                 };
 
                 SqlDbData.AddData(newCredential);
