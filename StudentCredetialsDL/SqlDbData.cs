@@ -7,73 +7,88 @@ namespace GradeManagementDL
 {
     public class SqlDbData
     {
-        static string connectionString = "Data Source=DESKTOP-4VKSJ0D\\SQLEXPRESS; Initial Catalog= StudentData; Integrated Security=True;";
+        static string connectionString = "Data Source=DESKTOP-4VKSJ0D\\SQLEXPRESS; Initial Catalog=StudentData; Integrated Security=True;";
+        static SqlConnection sqlConnection = new SqlConnection(connectionString);
 
         public static void Connect()
         {
-            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
-            {
-                sqlConnection.Open();
-            }
+            sqlConnection.Open();
         }
+
         public static List<Credential> GetList()
         {
             string selectStatement = "SELECT * FROM Studenttbl";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
             SqlCommand selectCommand = new SqlCommand(selectStatement, sqlConnection);
-
             sqlConnection.Open();
             SqlDataReader reader = selectCommand.ExecuteReader();
 
-            List<Credential> readUser = new List<Credential>();
+            List<Credential> credentials = new List<Credential>();
 
             while (reader.Read())
             {
-                string studentName = reader["Student_Name"].ToString();
-                string courseSection = reader["Course_Section"].ToString();
-                double averageGrade = Convert.ToDouble(reader["Average_Grade"]);
+                string StudentName = reader["Student_Name"].ToString();
+                string CourseSection = reader["Course_Section"].ToString();
+                double Average = Convert.ToDouble(reader["Average_Grade"]);
 
-                Credential readCredential = new Credential
-                {
-                    StudentName = studentName,
-                    CourseSection = courseSection,
-                    Average = averageGrade
-                };
+                Credential readUser = new Credential();
+                readUser.StudentName = StudentName;
+                readUser.CourseSection = CourseSection;
+                readUser.Average = Average; 
 
-                readUser.Add(readCredential);
+                credentials.Add(readUser);
+                //credentials.Add(new Credential
+                //{
+                //    StudentName = reader["Student_Name"].ToString(),
+                //    CourseSection = reader["Course_Section"].ToString(),
+                //    Average = Convert.ToDouble(reader["Average_Grade"])
+                //});
             }
 
             sqlConnection.Close();
-            return readUser;
+            return credentials;
         }
 
-        public static void AddData(Credential credential)
+        public static void AddData(string studentName, string courseSection, double average)
         {
             string insertStatement = "INSERT INTO Studenttbl (Student_Name, Course_Section, Average_Grade) VALUES (@StudentName, @CourseSection, @AverageGrade)";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-            SqlCommand info = new SqlCommand(insertStatement, sqlConnection);
-
-            info.Parameters.AddWithValue("@StudentName", credential.StudentName);
-            info.Parameters.AddWithValue("@CourseSection", credential.CourseSection);
-            info.Parameters.AddWithValue("@AverageGrade", credential.Average);
+            SqlCommand insertCommand = new SqlCommand(insertStatement, sqlConnection);
+            insertCommand.Parameters.AddWithValue("@StudentName", studentName);
+            insertCommand.Parameters.AddWithValue("@CourseSection", courseSection);
+            insertCommand.Parameters.AddWithValue("@AverageGrade", average);
             sqlConnection.Open();
-            info.ExecuteNonQuery();
+            insertCommand.ExecuteNonQuery();
             sqlConnection.Close();
         }
+
         public static void DeleteData(Credential credential)
         {
-            string deleteStatement = "DELETE FROM tblStudent WHERE Student_Name = @StudentName AND Course_Section = @CourseSection AND Average_Grade = @AverageGrade";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-            SqlCommand deleteCommand = new SqlCommand(deleteStatement, sqlConnection);
-
-            deleteCommand.Parameters.AddWithValue("@StudentName", credential.StudentName);
-            deleteCommand.Parameters.AddWithValue("@CourseSection", credential.CourseSection);
-            deleteCommand.Parameters.AddWithValue("@AverageGrade", credential.Average);
-
-            sqlConnection.Open();
-            deleteCommand.ExecuteNonQuery();
-            sqlConnection.Close();
+            string deleteStatement = "DELETE FROM Studenttbl WHERE Student_Name = @StudentName AND Course_Section = @CourseSection AND Average_Grade = @AverageGrade";
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand deleteCommand = new SqlCommand(deleteStatement, sqlConnection);
+                deleteCommand.Parameters.AddWithValue("@StudentName", credential.StudentName);
+                deleteCommand.Parameters.AddWithValue("@CourseSection", credential.CourseSection);
+                deleteCommand.Parameters.AddWithValue("@AverageGrade", credential.Average);
+                sqlConnection.Open();
+                deleteCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+            }
         }
-}
+
+        public static void UpdateData(string studentName, string courseSection, double average)
+        {
+            string updateStatement = "UPDATE Studenttbl SET Average_Grade = @AverageGrade WHERE Student_Name = @StudentName AND Course_Section = @CourseSection";
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand updateCommand = new SqlCommand(updateStatement, sqlConnection);
+                updateCommand.Parameters.AddWithValue("@StudentName", studentName);
+                updateCommand.Parameters.AddWithValue("@CourseSection", courseSection);
+                updateCommand.Parameters.AddWithValue("@AverageGrade", average);
+                sqlConnection.Open();
+                updateCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+            }
+        }
+
+    }
 }

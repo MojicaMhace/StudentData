@@ -4,71 +4,112 @@ using GradeManagementDL;
 using GradeManagemenrBL;
 using ModelList;
 
-
-
 namespace GradesSystemUI
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            SqlDbData.Connect();
-            List<Credential> students = SqlDbData.GetList();
+            List<Credential> studentsDB = SqlDbData.GetList();
 
-            foreach (var student in students)
+            Console.WriteLine("-----------------------------------------------------------------------------------------");
+            Console.WriteLine("Welcome to the Grade Management System");
+            Console.WriteLine("-----------------------------------------------------------------------------------------");
+
+            Console.Write("Enter Student Name: ");
+            string studentName = Console.ReadLine();
+            Console.Write("Enter Course and Section: ");
+            string courseSection = Console.ReadLine();
+
+            Credential existingStudent = studentsDB.Find(student => student.StudentName == studentName && student.CourseSection == courseSection);
+
+            if (existingStudent != null)
             {
-                Console.WriteLine("-----------------------------------------------------------------------------------------");
-                Console.WriteLine("Welcome to the Grade Management System");
-                Console.WriteLine("-----------------------------------------------------------------------------------------");
-                Console.WriteLine($"Student Name: {student.StudentName}");
-                Console.WriteLine($"Course and Section: {student.CourseSection}");
-                Console.WriteLine("Enter Subject Grades");
+                Console.WriteLine("Student exists. Do you want to update the record? (yes/no)");
+                string updateChoice = Console.ReadLine().ToLower();
 
-                Console.Write("Data Structure: ");
-                double datastruc = Convert.ToDouble(Console.ReadLine());
-                Console.Write("Algorithms: ");
-                double algo = Convert.ToDouble(Console.ReadLine());
-                Console.Write("Database Management: ");
-                double database = Convert.ToDouble(Console.ReadLine());
-                Console.Write("Programming3: ");
-                double prog = Convert.ToDouble(Console.ReadLine());
-                Console.Write("Data and Networking: ");
-                double network = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("------------------------------------------------------------------------------------------");
-
-                SubjectList subjectList = new SubjectList
+                if (updateChoice == "yes")
                 {
-                    DataStructure = datastruc,
-                    Algorithm = algo,
-                    DataBase = database,
-                    Programming3 = prog,
-                    DataComAndNetworking = network
-                };
-
-                CalculateGrade calculateGrade = new CalculateGrade(datastruc, algo, database, prog, network);
-                double averageGrade = calculateGrade.GetAverageGrade();
-
-                Console.WriteLine("------------------------------------------------------------------------------------------");
-                Console.WriteLine("This is your Credentials");
-                Console.WriteLine("------------------------------------------------------------------------------------------");
-                Console.WriteLine("Student Name: " + student.StudentName);
-                Console.WriteLine("Course and Section: " + student.CourseSection);
-                Console.WriteLine("General Weighted Average: " + averageGrade);
-
-                AcademicAchievementService academicAchievement = new AcademicAchievementService(averageGrade);
-                string achievement = academicAchievement.GetAcademicAward();
-                Console.WriteLine("Academic Achievement: " + achievement);
-                Console.WriteLine("------------------------------------------------------------------------------------------");
-
-                Credential newCredential = new Credential
-                {
-                    StudentName = student.StudentName,
-                    CourseSection = student.CourseSection,
-                    Average = averageGrade 
-                };
-
-                SqlDbData.AddData(newCredential);
+                    UpdateStudentData(existingStudent);
+                }
             }
+            else
+            {
+                Console.WriteLine("Student does not exist. Adding a new student record.");
+                AddStudentData(studentName, courseSection);
+            }
+        }
+
+        private static void AddStudentData(string studentName, string courseSection)
+        {
+            Console.WriteLine("Enter Subject Grades");
+            double datastruc = GetGrade("Data Structure");
+            double algo = GetGrade("Algorithms");
+            double database = GetGrade("Database Management");
+            double prog = GetGrade("Programming3");
+            double network = GetGrade("Data and Networking");
+
+            double averageGrade = CalculateAverageGrade(datastruc, algo, database, prog, network);
+
+            Console.WriteLine("------------------------------------------------------------------------------------------");
+            Console.WriteLine("This is your Credentials");
+            Console.WriteLine("------------------------------------------------------------------------------------------");
+            Console.WriteLine("Student Name: " + studentName);
+            Console.WriteLine("Course and Section: " + courseSection);
+            Console.WriteLine("General Weighted Average: " + averageGrade);
+
+            AcademicService academicAchievement = new AcademicService(averageGrade);
+            string achievement = academicAchievement.GetAcademicAward();
+            Console.WriteLine("Academic Achievement: " + achievement);
+            Console.WriteLine("------------------------------------------------------------------------------------------");
+
+            Credential newCredential = new Credential
+            {
+                StudentName = studentName,
+                CourseSection = courseSection,
+                Average = averageGrade
+            };
+
+            SqlDbData.AddData(studentName, courseSection, averageGrade);
+        }
+
+        private static double GetGrade(string subject)
+        {
+            Console.Write($"{subject}: ");
+            return Convert.ToDouble(Console.ReadLine());
+        }
+
+        private static double CalculateAverageGrade(double datastruc, double algo, double database, double prog, double network)
+        {
+            CalculateGrade calculateGrade = new CalculateGrade(datastruc, algo, database, prog, network);
+            return calculateGrade.GetAverageGrade();
+        }
+
+        private static void UpdateStudentData(Credential existStudentInfo)
+        {
+            Console.WriteLine("Enter new Subject Grades to update");
+            double datastruc = GetGrade("Data Structure");
+            double algo = GetGrade("Algorithms");
+            double database = GetGrade("Database Management");
+            double prog = GetGrade("Programming3");
+            double network = GetGrade("Data and Networking");
+
+            double averageGrade = CalculateAverageGrade(datastruc, algo, database, prog, network);
+
+            Console.WriteLine("------------------------------------------------------------------------------------------");
+            Console.WriteLine("This is your updated Credentials");
+            Console.WriteLine("------------------------------------------------------------------------------------------");
+            Console.WriteLine("Student Name: " + existStudentInfo.StudentName);
+            Console.WriteLine("Course and Section: " + existStudentInfo.CourseSection);
+            Console.WriteLine("General Weighted Average: " + averageGrade);
+
+            AcademicService academicAchievement = new AcademicService(averageGrade);
+            string achievement = academicAchievement.GetAcademicAward();
+            Console.WriteLine("Academic Achievement: " + achievement);
+            Console.WriteLine("------------------------------------------------------------------------------------------");
+
+            existStudentInfo.Average = averageGrade;
+            SqlDbData.UpdateData(existStudentInfo);
         }
     }
 }

@@ -1,10 +1,10 @@
 ﻿namespace GradeManagemenrBL
 {
-    public class AcademicAchievementService
+    public class AcademicService
     {
         public double Average;
 
-        public AcademicAchievementService(double average)
+        public AcademicService(double average)
         {
             Average = average;
         }
@@ -24,5 +24,6 @@
                 return "Sorry, you are not qualified to be in the President's or Dean's List.";
             }
         }
+
     }
 }
