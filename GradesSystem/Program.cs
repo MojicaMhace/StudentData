@@ -11,6 +11,7 @@ namespace GradesSystemUI
     {
         static void Main(string[] args)
         {
+            // connection  database for vmmmmmmmm
             //SqlDbData.Connect();
             List<Credential> studentsDB = SqlDbData.GetList();
 
@@ -110,6 +111,8 @@ namespace GradesSystemUI
             Console.WriteLine("Academic Achievement: " + achievement);
             Console.WriteLine("------------------------------------------------------------------------------------------");
 
+            //
+            //
         }
     }
 }
