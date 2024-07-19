@@ -11,7 +11,7 @@ namespace GradesSystemUI
     {
         static void Main(string[] args)
         {
-            SqlDbData.Connect();
+            //SqlDbData.Connect();
             List<Credential> studentsDB = SqlDbData.GetList();
 
             Console.WriteLine("-----------------------------------------------------------------------------------------");

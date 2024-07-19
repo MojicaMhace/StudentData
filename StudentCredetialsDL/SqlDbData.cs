@@ -7,8 +7,8 @@ namespace GradeManagementDL
 {
     public class SqlDbData
     {
-        static string connectionString //="Data Source=DESKTOP-4VKSJ0D\\SQLEXPRESS; Initial Catalog=StudentData; Integrated Security=True;";
-            = "Data Source=DESKTOP-4VKSJ0D\\SQLEXPRESS; Initial Catalog=StudentData; Integrated Security=True;";
+        static string connectionString ="Data Source=DESKTOP-4VKSJ0D\\SQLEXPRESS; Initial Catalog=StudentData; Integrated Security=True;";
+           //"Server=tcp:20.2.88.95,1433;Database=StudentData;Uer Id=sa; Password=Bst2022-2023";
         static SqlConnection sqlConnection = new SqlConnection(connectionString);
 
         public static void Connect()
@@ -37,12 +37,7 @@ namespace GradeManagementDL
                 readUser.Average = Average; 
 
                 credentials.Add(readUser);
-                //credentials.Add(new Credential
-                //{
-                //    StudentName = reader["Student_Name"].ToString(),
-                //    CourseSection = reader["Course_Section"].ToString(),
-                //    Average = Convert.ToDouble(reader["Average_Grade"])
-                //});
+                
             }
 
             sqlConnection.Close();
