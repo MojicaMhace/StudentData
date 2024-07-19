@@ -7,7 +7,8 @@ namespace GradeManagementDL
 {
     public class SqlDbData
     {
-        static string connectionString = "Data Source=DESKTOP-4VKSJ0D\\SQLEXPRESS; Initial Catalog=StudentData; Integrated Security=True;";
+        static string connectionString //="Data Source=DESKTOP-4VKSJ0D\\SQLEXPRESS; Initial Catalog=StudentData; Integrated Security=True;";
+            = "Data Source=DESKTOP-4VKSJ0D\\SQLEXPRESS; Initial Catalog=StudentData; Integrated Security=True;";
         static SqlConnection sqlConnection = new SqlConnection(connectionString);
 
         public static void Connect()

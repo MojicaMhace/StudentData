@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GradeManagementDL;
 using GradeManagemenrBL;
 using ModelList;
+using System.Security.Cryptography.X509Certificates;
 
 namespace GradesSystemUI
 {
@@ -10,6 +11,7 @@ namespace GradesSystemUI
     {
         static void Main(string[] args)
         {
+            SqlDbData.Connect();
             List<Credential> studentsDB = SqlDbData.GetList();
 
             Console.WriteLine("-----------------------------------------------------------------------------------------");
@@ -108,8 +110,6 @@ namespace GradesSystemUI
             Console.WriteLine("Academic Achievement: " + achievement);
             Console.WriteLine("------------------------------------------------------------------------------------------");
 
-            existStudentInfo.Average = averageGrade;
-            //SqlDbData.UpdateData(existStudentInfo);
         }
     }
 }
