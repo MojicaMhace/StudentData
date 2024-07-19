@@ -39,10 +39,17 @@ namespace GradeManagementAPI.Controllers
             return new JsonResult("Success");
         }
 
+        [HttpDelete]
+        public JsonResult DeleteData(Credential request)
+        {
+            SqlDbData.DeleteData(request.StudentName, request.CourseSection, request.Average);
+            return new JsonResult("Success");
+        }
+
         [HttpPatch]
         public JsonResult UpdateUser(Credential request)
         {
-            SqlDbData.UpdateData(request.StudentName, request.CourseSection, request.Average); // Call static method directly
+            SqlDbData.UpdateData(request.StudentName, request.CourseSection, request.Average);
             return new JsonResult("Success");
         }
 

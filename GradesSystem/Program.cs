@@ -109,7 +109,7 @@ namespace GradesSystemUI
             Console.WriteLine("------------------------------------------------------------------------------------------");
 
             existStudentInfo.Average = averageGrade;
-            SqlDbData.UpdateData(existStudentInfo);
+            //SqlDbData.UpdateData(existStudentInfo);
         }
     }
 }

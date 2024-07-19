@@ -60,26 +60,23 @@ namespace GradeManagementDL
             sqlConnection.Close();
         }
 
-        public static void DeleteData(Credential credential)
+        public static void DeleteData(string studentName, string courseSection, double average)
         {
             string deleteStatement = "DELETE FROM Studenttbl WHERE Student_Name = @StudentName AND Course_Section = @CourseSection AND Average_Grade = @AverageGrade";
-            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
-            {
+
                 SqlCommand deleteCommand = new SqlCommand(deleteStatement, sqlConnection);
-                deleteCommand.Parameters.AddWithValue("@StudentName", credential.StudentName);
-                deleteCommand.Parameters.AddWithValue("@CourseSection", credential.CourseSection);
-                deleteCommand.Parameters.AddWithValue("@AverageGrade", credential.Average);
+                deleteCommand.Parameters.AddWithValue("@StudentName", studentName);
+                deleteCommand.Parameters.AddWithValue("@CourseSection", courseSection);
+                deleteCommand.Parameters.AddWithValue("@AverageGrade", average);
+
                 sqlConnection.Open();
                 deleteCommand.ExecuteNonQuery();
                 sqlConnection.Close();
-            }
         }
 
         public static void UpdateData(string studentName, string courseSection, double average)
         {
             string updateStatement = "UPDATE Studenttbl SET Average_Grade = @AverageGrade WHERE Student_Name = @StudentName AND Course_Section = @CourseSection";
-            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
-            {
                 SqlCommand updateCommand = new SqlCommand(updateStatement, sqlConnection);
                 updateCommand.Parameters.AddWithValue("@StudentName", studentName);
                 updateCommand.Parameters.AddWithValue("@CourseSection", courseSection);
@@ -87,7 +84,7 @@ namespace GradeManagementDL
                 sqlConnection.Open();
                 updateCommand.ExecuteNonQuery();
                 sqlConnection.Close();
-            }
+
         }
 
     }
