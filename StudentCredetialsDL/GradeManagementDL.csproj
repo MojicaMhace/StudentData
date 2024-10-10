@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ModelList\ModelList.csproj" />
+    <ProjectReference Include="..\GradeManagemenrBL\GradeManagemenrBL.csproj" />
   </ItemGroup>
 
 </Project>

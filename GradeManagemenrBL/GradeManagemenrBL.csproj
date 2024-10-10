@@ -5,7 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ModelList\ModelList.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="GradeManagementDL">
+      <HintPath>..\..\modelList\StudentCredetialsDL\bin\Debug\netstandard2.0\GradeManagementDL.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

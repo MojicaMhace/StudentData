@@ -8,8 +8,8 @@ namespace GradeManagementDL
     public class SqlDbData
     {
         // 2 database connetion  desktop outside the vm, thr server on is inside the  vm.
-        static string connectionString =//"Data Source=DESKTOP-4VKSJ0D\\SQLEXPRESS; Initial Catalog=StudentData; Integrated Security=True;";
-        "Server=tcp:20.2.88.95,1433;Database=StudentData;User Id=sa; Password=Bsit2022-2023";
+        static string connectionString ="Data Source=DESKTOP-4VKSJ0D\\SQLEXPRESS; Initial Catalog=StudentData; Integrated Security=True;";
+        //"Server=tcp:20.2.88.95,1433;Database=StudentData;User Id=sa; Password=Bsit2022-2023";
         static SqlConnection sqlConnection = new SqlConnection(connectionString);
         //public static void Connect()
         // {
