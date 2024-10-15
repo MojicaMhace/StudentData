@@ -12,10 +12,6 @@ namespace GradeManagementDL
         static string connectionString = "Data Source=DESKTOP-8GMKO0I\\SQLEXPRESS01; Initial Catalog=StudentData; Integrated Security=True;";
         //"Server=tcp:20.2.88.95,1433;Database=StudentData;User Id=sa; Password=Bsit2022-2023";
         static SqlConnection sqlConnection = new SqlConnection(connectionString);
-        //public static void Connect()
-        // {
-        // sqlConnection.Open();
-        // }
 
         public static List<Credential> GetList()
         {
