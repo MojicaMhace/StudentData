@@ -1371,19 +1371,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mhace\\.nuget\\packages\\": {}
+    "C:\\Users\\PUPBC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
+      "projectUniqueName": "C:\\Users\\PUPBC\\source\\repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
       "projectName": "GradeManagementDL",
-      "projectPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
-      "packagesPath": "C:\\Users\\mhace\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\StudentCredetialsDL\\obj\\",
+      "projectPath": "C:\\Users\\PUPBC\\source\\repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
+      "packagesPath": "C:\\Users\\PUPBC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PUPBC\\source\\repos\\StudentData\\StudentCredetialsDL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mhace\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PUPBC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1398,8 +1398,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\mhace\\Source\\Repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj": {
-              "projectPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj"
+            "C:\\Users\\PUPBC\\source\\repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj": {
+              "projectPath": "C:\\Users\\PUPBC\\source\\repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj"
             }
           }
         }
@@ -1441,7 +1441,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

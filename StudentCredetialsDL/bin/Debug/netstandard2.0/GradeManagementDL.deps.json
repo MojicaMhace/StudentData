@@ -241,18 +241,12 @@
           "ModelList": "1.0.0"
         },
         "runtime": {
-          "GradeManagemenrBL.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "GradeManagemenrBL.dll": {}
         }
       },
       "ModelList/1.0.0": {
         "runtime": {
-          "ModelList.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "ModelList.dll": {}
         }
       },
       "GradeManagementDL/1.0.0.0": {
