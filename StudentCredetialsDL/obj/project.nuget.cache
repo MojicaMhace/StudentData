@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VPAprkcjX78=",
+  "dgSpecHash": "VJu4OPBLjH4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
+  "projectFilePath": "C:\\Users\\mhace\\source\\repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mhace\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",
     "C:\\Users\\mhace\\.nuget\\packages\\mailkit\\4.8.0\\mailkit.4.8.0.nupkg.sha512",
