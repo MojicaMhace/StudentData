@@ -1376,11 +1376,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mhace\\source\\repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
+      "projectUniqueName": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
       "projectName": "GradeManagementDL",
-      "projectPath": "C:\\Users\\mhace\\source\\repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
+      "projectPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
       "packagesPath": "C:\\Users\\mhace\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\StudentCredetialsDL\\obj\\",
+      "outputPath": "C:\\Users\\mhace\\source\\repos\\StudentData\\StudentCredetialsDL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mhace\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1398,8 +1398,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\mhace\\source\\repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj": {
-              "projectPath": "C:\\Users\\mhace\\source\\repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj"
+            "C:\\Users\\mhace\\Source\\Repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj": {
+              "projectPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj"
             }
           }
         }

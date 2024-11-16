@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GradeManagementDL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16f299f3b9c417bef5350923bc907b27a2cbe301")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ee845398a2edb39a8a5cbd6ff56d7ab70171ba7")]
 [assembly: System.Reflection.AssemblyProductAttribute("GradeManagementDL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GradeManagementDL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

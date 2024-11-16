@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mhace\\source\\repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj": {}
+    "C:\\Users\\mhace\\Source\\Repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mhace\\source\\repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj": {
+    "C:\\Users\\mhace\\Source\\Repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mhace\\source\\repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj",
+        "projectUniqueName": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj",
         "projectName": "GradeManagemenrBL",
-        "projectPath": "C:\\Users\\mhace\\source\\repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj",
+        "projectPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj",
         "packagesPath": "C:\\Users\\mhace\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\GradeManagemenrBL\\obj\\",
         "projectStyle": "PackageReference",
@@ -29,8 +29,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\mhace\\source\\repos\\StudentData\\ModelList\\ModelList.csproj": {
-                "projectPath": "C:\\Users\\mhace\\source\\repos\\StudentData\\ModelList\\ModelList.csproj"
+              "C:\\Users\\mhace\\Source\\Repos\\StudentData\\ModelList\\ModelList.csproj": {
+                "projectPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\ModelList\\ModelList.csproj"
               }
             }
           }
@@ -76,12 +76,12 @@
         }
       }
     },
-    "C:\\Users\\mhace\\source\\repos\\StudentData\\ModelList\\ModelList.csproj": {
+    "C:\\Users\\mhace\\Source\\Repos\\StudentData\\ModelList\\ModelList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mhace\\source\\repos\\StudentData\\ModelList\\ModelList.csproj",
+        "projectUniqueName": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\ModelList\\ModelList.csproj",
         "projectName": "ModelList",
-        "projectPath": "C:\\Users\\mhace\\source\\repos\\StudentData\\ModelList\\ModelList.csproj",
+        "projectPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\ModelList\\ModelList.csproj",
         "packagesPath": "C:\\Users\\mhace\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\mhace\\source\\repos\\StudentData\\ModelList\\obj\\",
         "projectStyle": "PackageReference",
@@ -140,12 +140,12 @@
         }
       }
     },
-    "C:\\Users\\mhace\\source\\repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj": {
+    "C:\\Users\\mhace\\Source\\Repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mhace\\source\\repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
+        "projectUniqueName": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
         "projectName": "GradeManagementDL",
-        "projectPath": "C:\\Users\\mhace\\source\\repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
+        "projectPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\StudentCredetialsDL\\GradeManagementDL.csproj",
         "packagesPath": "C:\\Users\\mhace\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\StudentCredetialsDL\\obj\\",
         "projectStyle": "PackageReference",
@@ -165,8 +165,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\mhace\\source\\repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj": {
-                "projectPath": "C:\\Users\\mhace\\source\\repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj"
+              "C:\\Users\\mhace\\Source\\Repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj": {
+                "projectPath": "C:\\Users\\mhace\\Source\\Repos\\StudentData\\GradeManagemenrBL\\GradeManagemenrBL.csproj"
               }
             }
           }
